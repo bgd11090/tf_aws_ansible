@@ -57,15 +57,18 @@ As an optional stretch objective, an **Ansible playbook** is provided to:
 ### Pre-requisites
 
 - Terraform installed
+> (on Centos 7) <br/>
 > sudo yum install -y yum-utils <br/>
 > sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo <br/>
 > sudo yum -y install terraform <br/>
 
 - Ansible installed
+> (on Centos 7) <br/>
 > sudo yum install epel-release <br/>
 > sudo yum install ansible <br/>
 
 - AWS CLI installed
+> (on Centos 7) <br/>
 > sudo yum -y update <br/>
 > sudo yum -y upgrade <br/>
 > sudo yum -y makecache <br/>
