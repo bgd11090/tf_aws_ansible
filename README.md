@@ -54,7 +54,7 @@ As an optional stretch objective, an **Ansible playbook** is provided to:
 
 ---
 
-### Pre-requisites
+# Pre-requisites
 
 - Terraform installed
 > (on Centos 7) <br/>
@@ -78,7 +78,7 @@ As an optional stretch objective, an **Ansible playbook** is provided to:
 > ./aws/install -i /usr/bin/aws-cli -b /usr/bin <br/>
 
 
-### Deployment Instructions
+# Deployment Instructions
 - Clone this repository
 - Run ```aws configure``` and establish your credentials
 - Run a ```terraform init``` to grab providers and modules
@@ -89,7 +89,7 @@ As an optional stretch objective, an **Ansible playbook** is provided to:
 ansible-playbook -i aws_ec2.yaml -e ansible_ssh_private_key_file=tfkey -e ansible_ssh_user=ubuntu nginx_setup.yaml
 ```
 
-### Test Functionality
+# Test Functionality
 Try to access via browser on public ip address that you got eather from TF or Ansible outputs. <br/>
 **Note: You need to access with http(port 80) because right now port 443 is commented out for reason that we need to validate ssl certificate, in case you want to do it you need to do few quick steps:**
 
