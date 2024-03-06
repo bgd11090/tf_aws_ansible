@@ -27,7 +27,7 @@ This repository contains scripts and configurations to deploy a system on AWS wi
 - An S3 bucket for storing static content to be used by the EC2 instances running Nginx.
 - EC2 instances have access to download files from this S3 bucket.
 
-### Application Load Balancer (ALB) **Note at the end!**
+### Application Load Balancer (ALB) <br/> **Note at the end!**
 
 - An internet-facing **ALB** listening on ports 80/tcp and 443/tcp.
 - Port 80/tcp forcefully redirects to HTTPS.
@@ -65,13 +65,13 @@ As an optional stretch objective, an **Ansible playbook** is provided to:
 - Run a ```terraform init``` to grab providers and modules
 - Run a ```terraform_apply``` and wait untill you got instance_ip = "public.ip.address"
 - Run a ```chmod 600 tfkey```
-- Run a 
+- Run a command for ansible:
 ```bash
 ansible-playbook -i aws_ec2.yaml -e ansible_ssh_private_key_file=tfkey -e ansible_ssh_user=ubuntu nginx_setup.yaml
 ```
 
 ### Test Functionality
-Try to access via browser on public ip address that you got eather from TF or Ansible outputs.
+Try to access via browser on public ip address that you got eather from TF or Ansible outputs. <br/>
 **Note: You need to access with http(port 80) because right now port 443 is commented out for reason that we need to validate ssl certificate, in case you want to do it you need to do few quick steps:**
 
 - Create dns (we can do it with Route53 service on aws)
