@@ -57,26 +57,23 @@ As an optional stretch objective, an **Ansible playbook** is provided to:
 ### Pre-requisites
 
 - Terraform installed
-```javascript Centos 7
-- sudo yum install -y yum-utils
-- sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
-- sudo yum -y install terraform
-```
+> sudo yum install -y yum-utils
+> sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+> sudo yum -y install terraform
+
 - Ansible installed
-```javascript Centos 7
-- sudo yum install epel-release
-- sudo yum install ansible
-```
+> sudo yum install epel-release
+> sudo yum install ansible
+
 - AWS CLI installed
-```javascript Centos 7
-- sudo yum -y update 
-- sudo yum -y upgrade
-- sudo yum -y makecache
-- sudo yum -y install unzip
-- curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o awscli.zip
-- sudo unzip awscli.zip
-- ./aws/install -i /usr/bin/aws-cli -b /usr/bin
-```
+> sudo yum -y update 
+> sudo yum -y upgrade
+> sudo yum -y makecache
+> sudo yum -y install unzip
+> curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o awscli.zip
+> sudo unzip awscli.zip
+> ./aws/install -i /usr/bin/aws-cli -b /usr/bin
+
 
 ### Deployment Instructions
 - Clone this repository
