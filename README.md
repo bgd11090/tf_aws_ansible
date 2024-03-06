@@ -27,7 +27,8 @@ This repository contains scripts and configurations to deploy a system on AWS wi
 - An S3 bucket for storing static content to be used by the EC2 instances running Nginx.
 - EC2 instances have access to download files from this S3 bucket.
 
-### Application Load Balancer (ALB) <br/> **Note at the end!**
+### Application Load Balancer (ALB) <br/>
+> **Note at the end!**
 
 - An internet-facing **ALB** listening on ports 80/tcp and 443/tcp.
 - Port 80/tcp forcefully redirects to HTTPS.
@@ -56,14 +57,32 @@ As an optional stretch objective, an **Ansible playbook** is provided to:
 ### Pre-requisites
 
 - Terraform installed
+```javascript Centos 7
+- sudo yum install -y yum-utils
+- sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+- sudo yum -y install terraform
+```
 - Ansible installed
-- AWS credentials
+```javascript Centos 7
+- sudo yum install epel-release
+- sudo yum install ansible
+```
+- AWS CLI installed
+```javascript Centos 7
+- sudo yum -y update 
+- sudo yum -y upgrade
+- sudo yum -y makecache
+- sudo yum -y install unzip
+- curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o awscli.zip
+- sudo unzip awscli.zip
+- ./aws/install -i /usr/bin/aws-cli -b /usr/bin
+```
 
 ### Deployment Instructions
 - Clone this repository
-- Run ```aws_configure``` and establish your credentials
+- Run ```aws configure``` and establish your credentials
 - Run a ```terraform init``` to grab providers and modules
-- Run a ```terraform_apply``` and wait untill you got instance_ip = "public.ip.address"
+- Run a ```terraform apply``` and wait untill you got instance_ip = "public.ip.address"
 - Run a ```chmod 600 tfkey```
 - Run a command for ansible:
 ```bash
